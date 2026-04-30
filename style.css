@@ -447,8 +447,9 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .visit > * { min-width: 0; }
 @media (min-width: 900px) {
-  .visit { grid-template-columns: 1.6fr 1fr; gap: 48px; }
+  .visit { grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr); gap: 48px; }
 }
+.visit-row { flex-wrap: wrap; }
 @media (max-width: 900px) { .visit { padding: 32px; } }
 .visit h2 { color: var(--paper); }
 .visit-rows { margin-top: 24px; display: grid; gap: 14px; }
