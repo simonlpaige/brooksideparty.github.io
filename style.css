@@ -139,13 +139,17 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 14px 22px;
 }
 
-.nav-phone-icon { display: none; }
+.nav-phone-icon { 
+  display: none;
+  color: #000; /* Force black for visibility on red background */
+}
 @media (max-width: 768px) {
   .nav-phone-label { display: none; }
   .nav-phone-icon {
     display: inline;
     font-size: 18px;
     line-height: 1;
+    color: #000; /* Force black for visibility on red background */
   }
   .nav-links .btn,
   .nav-links .btn--primary {
@@ -803,6 +807,11 @@ textarea.input { min-height: 140px; resize: vertical; }
   min-height: 36px !important;
 }
 .social-icon:hover { background: var(--yellow); }
+.social-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
 .social-icon--dark {
   background: transparent;
   color: var(--bone) !important;
