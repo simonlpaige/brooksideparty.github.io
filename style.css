@@ -117,7 +117,7 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   justify-content: space-between;
   padding: 14px 0;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 @media (max-width: 640px) {
@@ -126,6 +126,30 @@ img { max-width: 100%; height: auto; display: block; }
 }
 @media (max-width: 768px) {
   .nav-inner .brand { margin-left: 8px; padding-left: 8px; }
+}
+
+/* Phone button in header - pulled out of nav to stay with brand on mobile */
+.nav-phone {
+  white-space: nowrap;
+  padding: 12px 24px;
+}
+
+/* On desktop, nav links sit to the right of brand with phone alongside */
+.nav-inner nav {
+  margin-left: auto;
+}
+
+/* On mobile, nav drops below brand+phone row */
+@media (max-width: 768px) {
+  .nav-inner nav {
+    width: 100%;
+    order: 1;
+    margin-left: 0;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 .brand {
   display: inline-flex;
