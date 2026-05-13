@@ -463,23 +463,26 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Visit / store box */
 .visit {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
   background: var(--ink);
   color: var(--paper);
   border-radius: var(--r-lg);
   padding: 48px;
   position: relative;
   overflow: hidden;
-  align-items: stretch;
 }
 .visit > * { min-width: 0; }
-@media (min-width: 900px) {
-  .visit { grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr); gap: 48px; }
+
+/* Map section - always appears below visit info */
+.map-section {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,253,247,0.18);
 }
 .visit-row { flex-wrap: wrap; }
-@media (max-width: 900px) { .visit { padding: 32px; } }
+@media (max-width: 900px) { 
+  .visit { padding: 32px; } 
+  .map-section { margin-top: 24px; padding-top: 24px; }
+}
 .visit h2 { color: var(--paper); }
 .visit-rows { margin-top: 24px; display: grid; gap: 14px; }
 .visit-row {
@@ -726,18 +729,40 @@ textarea.input { min-height: 140px; resize: vertical; }
   border: 0;
 }
 
-/* Map placeholder styling */
+/* Map image styling */
 .map-image-link {
   display: block;
   text-decoration: none;
   color: inherit;
+  position: relative;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1.5px solid rgba(255,253,247,0.2);
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
-.map-placeholder:hover {
-  transform: scale(1.02) !important;
-  box-shadow: var(--shadow-lg);
+.map-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  display: block;
 }
-.map-placeholder:active {
-  transform: scale(0.98) !important;
+.map-image-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.map-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+.map-pin {
+  font-size: 32px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  filter: drop-shadow(0 0 3px rgba(255,255,255,0.8));
 }
 
 /* Footer */
