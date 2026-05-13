@@ -294,13 +294,25 @@
             <p class="note" style="color:rgba(255,253,247,0.55); margin-top:14px;">Hours can shift around holidays - call ahead if you are making a special trip.</p>
           </div>
           <div class="map-link-wrap">
-            <div style="border-radius:12px; overflow:hidden; margin-bottom:16px; width:100%; aspect-ratio:4/3;">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3098.0!2d-94.5918!3d39.0294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0eff6b6b6b6b7%3A0x0!2sBrookside+Party+Warehouse%2C+6307+Brookside+Plaza%2C+Kansas+City%2C+MO+64113!5e0!3m2!1sen!2sus!4v1"
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade" title="Brookside Party Warehouse map"></iframe>
-            </div>
-            <a class="btn btn--primary map-link" href="https://www.google.com/maps/search/Brookside+Party+Warehouse+6307+Brookside+Plaza+Kansas+City+MO+64113" target="_blank" rel="noopener">📍 Open in Google Maps &rarr;</a>
+            <a href="https://maps.google.com/?q=103+W+63rd+Street,+Kansas+City,+MO+64113" target="_blank" rel="noopener" class="map-image-link" aria-label="View Brookside Party Warehouse location on map">
+              <div class="map-placeholder" style="width: 100%; aspect-ratio: 4/3; border-radius: 12px; border: 1.5px solid var(--ink); cursor: pointer; background: linear-gradient(135deg, #E8E1D1 0%, #FDEFD2 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 200ms ease; position: relative; overflow: hidden;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="background: var(--cream); border: 1.5px solid var(--ink); border-radius: 8px; padding: 16px 20px; text-align: center; box-shadow: var(--shadow-sm);">
+                  <div style="font-size: 32px; margin-bottom: 8px;">📍</div>
+                  <div style="font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--ink); margin-bottom: 4px;">103 W 63rd Street</div>
+                  <div style="font-family: var(--body); font-size: 14px; color: var(--ink-soft); margin-bottom: 8px;">Kansas City, MO 64113</div>
+                  <div style="font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-mute);">Click to open in maps</div>
+                </div>
+                <!-- Decorative map-like grid pattern -->
+                <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1; z-index: 0;" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <defs>
+                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100" height="100" fill="url(#grid)" />
+                </svg>
+              </div>
+            </a>
           </div>
         </div>
       </div>

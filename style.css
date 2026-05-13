@@ -726,6 +726,20 @@ textarea.input { min-height: 140px; resize: vertical; }
   border: 0;
 }
 
+/* Map placeholder styling */
+.map-image-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.map-placeholder:hover {
+  transform: scale(1.02) !important;
+  box-shadow: var(--shadow-lg);
+}
+.map-placeholder:active {
+  transform: scale(0.98) !important;
+}
+
 /* Footer */
 .footer {
   border-top: 1px solid var(--rule);
