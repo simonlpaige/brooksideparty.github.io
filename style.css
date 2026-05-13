@@ -117,7 +117,7 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   justify-content: space-between;
   padding: 14px 0;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 @media (max-width: 640px) {
@@ -128,36 +128,10 @@ img { max-width: 100%; height: auto; display: block; }
   .nav-inner .brand { margin-left: 8px; padding-left: 8px; }
 }
 
-/* Phone button in header - pulled out of nav to stay with brand on mobile */
-.nav-phone {
+/* Phone button - keep number from breaking across lines */
+.nav-links .btn,
+.nav-links .btn--primary {
   white-space: nowrap;
-  padding: 12px 24px;
-}
-
-/* On desktop, nav links sit to the right of brand with phone alongside */
-.nav-inner nav {
-  margin-left: auto;
-}
-
-/* On mobile, nav drops below brand+phone row */
-@media (max-width: 768px) {
-  .nav-inner nav {
-    width: 100%;
-    order: 1;
-    margin-left: 0;
-  }
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .brand svg {
-    max-width: 150px;
-    height: auto;
-  }
-  .nav-phone {
-    font-size: 13px;
-    padding: 8px 14px;
-  }
 }
 .brand {
   display: inline-flex;
