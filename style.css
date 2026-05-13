@@ -150,6 +150,14 @@ img { max-width: 100%; height: auto; display: block; }
     flex-wrap: wrap;
     justify-content: center;
   }
+  .brand svg {
+    max-width: 150px;
+    height: auto;
+  }
+  .nav-phone {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
 }
 .brand {
   display: inline-flex;
