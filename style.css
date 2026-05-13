@@ -149,7 +149,7 @@ img { max-width: 100%; height: auto; display: block; }
   }
   .nav-links .btn,
   .nav-links .btn--primary {
-    padding: 8px 12px;
+    padding: 12px 12px;
   }
 }
 .brand {
