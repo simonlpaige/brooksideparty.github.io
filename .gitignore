@@ -1,0 +1,8 @@
+node_modules/
+screenshots/
+gemma-review-*.md
+audit-result.json
+.env
+Thumbs.db
+.DS_Store
+*.log

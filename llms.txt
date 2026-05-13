@@ -1,0 +1,32 @@
+# Brookside Party Warehouse
+
+> Brookside Party Warehouse — brooksideparty.com
+
+## What This Site Is
+
+TODO: One paragraph describing this business/organization and what it does. Write it in plain language that a non-expert would understand.
+
+## Who This Site Is For
+
+TODO: Describe the intended audience (local customers, business clients, community members, etc.)
+
+## What You Can Do Here
+
+- TODO: List the main things a visitor can do or find on this site
+- Example: Find hours and location, view our menu, contact us for a quote
+
+## Key Information
+
+- **Location**: TODO (city, state)
+- **Phone**: TODO
+- **Email**: TODO
+- **Hours**: TODO
+
+## Contact
+
+TODO: Primary contact method for visitors who need help or have questions.
+
+---
+
+*Site designed by Simon L. Paige — simonlpaige.com*
+
