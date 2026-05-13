@@ -133,6 +133,12 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-links .btn--primary {
   white-space: nowrap;
 }
+
+/* Desktop: Add extra padding to phone button */
+.nav-links .btn--primary {
+  padding: 14px 28px;
+}
+
 .nav-phone-icon { display: none; }
 @media (max-width: 768px) {
   .nav-phone-label { display: none; }
