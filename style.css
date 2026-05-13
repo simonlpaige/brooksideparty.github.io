@@ -492,6 +492,38 @@ img { max-width: 100%; height: auto; display: block; }
 .visit a { color: var(--yellow); }
 .visit a:hover { color: var(--paper); }
 
+/* Visit map styling */
+.visit-map-link {
+  display: block;
+  margin-top: 24px;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1.5px solid rgba(255,253,247,0.2);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  position: relative;
+}
+.visit-map-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  display: block;
+}
+.visit-map-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.visit-map-pin {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  filter: drop-shadow(0 0 3px rgba(255,255,255,0.8));
+  pointer-events: none;
+}
+
 /* SVG map sketch (in visit block) */
 .map {
   border-radius: 16px;
