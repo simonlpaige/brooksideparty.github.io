@@ -133,6 +133,19 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-links .btn--primary {
   white-space: nowrap;
 }
+.nav-phone-icon { display: none; }
+@media (max-width: 768px) {
+  .nav-phone-label { display: none; }
+  .nav-phone-icon {
+    display: inline;
+    font-size: 18px;
+    line-height: 1;
+  }
+  .nav-links .btn,
+  .nav-links .btn--primary {
+    padding: 8px 12px;
+  }
+}
 .brand {
   display: inline-flex;
   align-items: center;
