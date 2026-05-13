@@ -134,9 +134,9 @@ img { max-width: 100%; height: auto; display: block; }
   white-space: nowrap;
 }
 
-/* Desktop: Add extra padding to phone button */
+/* Desktop: Ensure phone button matches standard button padding */
 .nav-links .btn--primary {
-  padding: 14px 28px;
+  padding: 14px 22px;
 }
 
 .nav-phone-icon { display: none; }
