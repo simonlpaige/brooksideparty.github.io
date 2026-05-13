@@ -134,12 +134,12 @@
             <div class="contact-card">
               <h3>Send us a note</h3>
               <p class="muted" style="margin-top:6px;">Tell us your party plan and we will reply with what to bring or set aside. Use this for general questions - for same-day balloon orders, please call.</p>
-              <form id="contact-form" novalidate>
+              <form id="contact-form" action="https://formspree.io/bkspartywarehouse@gmail.com" method="POST" novalidate>
                 <label class="label" for="name">Your name</label>
                 <input class="input" id="name" name="name" type="text" autocomplete="name" required>
 
-                <label class="label" for="contact">Email or phone</label>
-                <input class="input" id="contact" name="contact" type="text" autocomplete="email" required>
+                <label class="label" for="email">Email or phone</label>
+                <input class="input" id="email" name="email" type="email" autocomplete="email" required>
 
                 <label class="label" for="occasion">What is the occasion?</label>
                 <select class="input" id="occasion" name="occasion">
@@ -154,12 +154,17 @@
 
                 <label class="label" for="message">Tell us more</label>
                 <textarea class="input" id="message" name="message" rows="5" required></textarea>
+                
+                <!-- Hidden fields for better email formatting -->
+                <input type="hidden" name="_subject" value="Contact Form Submission from Brookside Party Warehouse Website">
+                <input type="hidden" name="_replyto" id="_replyto" value="">
+                <input type="hidden" name="_next" value="https://brooksideparty.com/contact.html?sent=true">
 
                 <div class="cta-row" style="margin-top:22px;">
                   <button class="btn btn--primary" type="submit">Send note</button>
                   <a class="btn btn--ghost" href="tel:+18163332332">816-333-2332</a>
                 </div>
-                <p class="note" style="margin-top:14px;">This form does not store or send your message anywhere - it is a placeholder demo. Please call or stop in for now.</p>
+                <p class="note" style="margin-top:14px;">We'll get back to you within 24 hours. For same-day balloon orders, please call 816-333-2332.</p>
 
                 <div id="form-success" class="form-success" hidden role="status" aria-live="polite">
                   Thanks! We will be in touch soon. Until then, here is some confetti.
@@ -249,22 +254,34 @@
 
       var form = document.getElementById("contact-form");
       var success = document.getElementById("form-success");
+      
+      // Check if form was just submitted
+      var urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('sent') === 'true') {
+        if (success) {
+          success.hidden = false;
+          success.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+        if (window.Confetti) window.Confetti.burst();
+      }
+      
       if (form) {
         form.addEventListener("submit", function (e) {
-          e.preventDefault();
           var name = document.getElementById("name").value.trim();
-          var contact = document.getElementById("contact").value.trim();
+          var email = document.getElementById("email").value.trim();
           var message = document.getElementById("message").value.trim();
-          if (!name || !contact || !message) {
+          var replyto = document.getElementById("_replyto");
+          
+          if (!name || !email || !message) {
+            e.preventDefault();
             alert("Please fill in your name, contact info, and message.");
             return;
           }
-          if (success) {
-            success.hidden = false;
-            success.scrollIntoView({ behavior: "smooth", block: "center" });
+          
+          // Set reply-to email
+          if (replyto) {
+            replyto.value = email;
           }
-          if (window.Confetti) window.Confetti.burst();
-          form.reset();
         });
       }
     });
