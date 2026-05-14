@@ -135,7 +135,7 @@
             <div class="contact-card">
               <h3>Send us a note</h3>
               <p class="muted" style="margin-top:6px;">Tell us your party plan and we will reply with what to bring or set aside. Use this for general questions - for same-day balloon orders, please call.</p>
-              <form id="contact-form" action="https://formspree.io/bkspartywarehouse@gmail.com" method="POST" novalidate>
+              <form id="contact-form" action="https://form-handler.simonlpaige.workers.dev" method="POST" novalidate>
                 <label class="label" for="name">Your name</label>
                 <input class="input" id="name" name="name" type="text" autocomplete="name" required>
 
@@ -156,10 +156,13 @@
                 <label class="label" for="message">Tell us more</label>
                 <textarea class="input" id="message" name="message" rows="5" required></textarea>
                 
-                <!-- Hidden fields for better email formatting -->
-                <input type="hidden" name="_subject" value="Contact Form Submission from Brookside Party Warehouse Website">
-                <input type="hidden" name="_replyto" id="_replyto" value="">
-                <input type="hidden" name="_next" value="https://brooksideparty.com/contact.html?sent=true">
+                <!-- Hidden fields for form routing -->
+                <input type="hidden" name="_to"       value="bkspartywarehouse@gmail.com">
+                <input type="hidden" name="_subject"  value="New message from Brookside Party Warehouse website">
+                <input type="hidden" name="_next"     value="https://brooksideparty.com/contact.html?sent=true">
+                <input type="hidden" name="_sitename" value="Brookside Party Warehouse">
+                <!-- Honeypot: hidden from humans, catches bots -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
                 <div class="cta-row" style="margin-top:22px;">
                   <button class="btn btn--primary" type="submit">Send note</button>
@@ -271,17 +274,10 @@
           var name = document.getElementById("name").value.trim();
           var email = document.getElementById("email").value.trim();
           var message = document.getElementById("message").value.trim();
-          var replyto = document.getElementById("_replyto");
-          
           if (!name || !email || !message) {
             e.preventDefault();
             alert("Please fill in your name, contact info, and message.");
             return;
-          }
-          
-          // Set reply-to email
-          if (replyto) {
-            replyto.value = email;
           }
         });
       }

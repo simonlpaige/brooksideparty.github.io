@@ -1,3 +1,10 @@
+## 2026-05-14 — speed up mobile marquee from 18s to 12s
+- **Author**: Simon Paige
+- **Branch**: main
+- **Audit**: PASSED
+- **Screenshots**: C:\Users\simon\code\brooksideparty\screenshots\2026-05-14T11-28-18
+- **Visual verify**: yes
+
 # Changelog - Brookside Party Warehouse
 
 ## 2026-05-13 - Website workflow migration
