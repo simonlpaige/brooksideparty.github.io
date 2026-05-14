@@ -11,7 +11,7 @@
   --ink-mute: #6E6C75;
   --rule: #E8E1D1;
 
-  --red: #E63946;
+  --red: #C42B38; /* darkened from #E63946 for WCAG AA 4.5:1 with --paper text */
   --orange: #F4862A;
   --yellow: #F6C443;
   --green: #4FB477;
@@ -138,6 +138,8 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-links .btn--primary {
   padding: 14px 22px;
 }
+/* Override nav-link inherited color so btn--primary always shows --paper text */
+.nav-links a.btn--primary { color: var(--paper); }
 
 .nav-phone-icon { 
   display: none;
@@ -401,10 +403,11 @@ img { max-width: 100%; height: auto; display: block; }
 .cat--blue { background: var(--blue); color: var(--paper); }
 .cat--blue .num, .cat--blue p { color: rgba(255,253,247,0.92); }
 .cat--blue .arrow { background: var(--paper); color: var(--ink); }
-.cat--green { background: var(--green); color: var(--paper); }
+.cat--green { background: #3A9060; color: var(--paper); } /* #3A9060 darkened from var(--green)/#4FB477 for WCAG AA h3 large-text 3:1 */
 .cat--green .num, .cat--green p { color: rgba(255,253,247,0.92); }
 .cat--green .arrow { background: var(--paper); color: var(--ink); }
 .cat--yellow { background: var(--yellow); color: var(--ink); }
+.cat--yellow .num { color: var(--ink); } /* ink-mute on yellow fails WCAG; full ink = 10.6:1 */
 @media (max-width: 900px) {
   .cat--featured, .cat--small, .cat--med { grid-column: span 12; }
 }
