@@ -327,7 +327,7 @@ img { max-width: 100%; height: auto; display: block; }
   to   { transform: translateX(-50%); }
 }
 @media (max-width: 768px) {
-  .marquee-track { animation-duration: 18s; }
+  .marquee-track { animation-duration: 12s; }
 }
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
