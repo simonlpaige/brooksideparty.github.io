@@ -327,8 +327,10 @@ img { max-width: 100%; height: auto; display: block; }
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+/* Marquee speed is set by JS (180px/s) in index.html.
+   This fallback fires only if JS is disabled. */
 @media (max-width: 768px) {
-  .marquee-track { animation: marquee 12s linear infinite; }
+  .marquee-track { animation: marquee 8s linear infinite; }
 }
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }

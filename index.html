@@ -157,6 +157,7 @@
         <span><span class="marquee-dot" style="background:#F6C443"></span>CLASS OF 2026 &mdash; WE GOTCHU</span>
         <span><span class="marquee-dot" style="background:#4FB477"></span>PI&Ntilde;ATAS IN STOCK</span>
         <span><span class="marquee-dot" style="background:#3A86E0"></span>SPOOKIER UPSTAIRS &middot; ALL YEAR</span>
+        <span><span class="marquee-dot" style="background:#F4862A"></span>CUSTOM ORDERS</span>
         <span><span class="marquee-dot" style="background:#E86A92"></span>FREE STREET PARKING</span>
       </div>
     </div>
@@ -396,6 +397,20 @@
         window.Confetti.pop(e.clientX, e.clientY);
       });
     });
+  </script>
+
+  <script>
+    // Marquee speed: set animation duration from actual content width
+    // so it's pixel-consistent on every screen size, no media queries needed.
+    (function () {
+      var track = document.querySelector('.marquee-track');
+      if (!track) return;
+      // scrollWidth = both halves; divide by 2 for one full loop distance
+      var halfWidth = track.scrollWidth / 2;
+      var PX_PER_SEC = 180; // pixels per second - raise to speed up, lower to slow down
+      var duration = (halfWidth / PX_PER_SEC).toFixed(2);
+      track.style.animationDuration = duration + 's';
+    })();
   </script>
 </body>
 </html>
