@@ -400,9 +400,11 @@
   </script>
 
   <script>
-    // Marquee speed: set animation duration from actual content width
-    // so it's pixel-consistent on every screen size, no media queries needed.
-    (function () {
+    // Marquee speed: wait for fonts to load before measuring scrollWidth.
+    // Running immediately gives the fallback-font width (too narrow), which
+    // causes the animation to loop before the real font's wider track reaches
+    // -50%, making it snap back halfway across the screen.
+    document.fonts.ready.then(function () {
       var track = document.querySelector('.marquee-track');
       if (!track) return;
       // scrollWidth = both halves; divide by 2 for one full loop distance
@@ -410,7 +412,7 @@
       var PX_PER_SEC = 180; // pixels per second - raise to speed up, lower to slow down
       var duration = (halfWidth / PX_PER_SEC).toFixed(2);
       track.style.animationDuration = duration + 's';
-    })();
+    });
   </script>
 </body>
 </html>
