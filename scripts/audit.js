@@ -69,7 +69,11 @@ function checkRequiredFiles() {
 
 function findHtmlFiles(dir) {
   const out = [];
-  const skip = new Set(['.git', 'node_modules', 'screenshots', 'design-system', '_archive', 'scripts']);
+  const skip = new Set([
+    '.git', 'node_modules', 'screenshots', 'design-system', '_archive', 'scripts',
+    // Design/staging dirs — not deployed pages
+    'logo-concepts', 'v2', 'scratch', 'staging', 'drafts', 'tmp',
+  ]);
   function walk(d) {
     let entries;
     try { entries = fs.readdirSync(d, { withFileTypes: true }); } catch { return; }
