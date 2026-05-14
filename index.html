@@ -400,18 +400,23 @@
   </script>
 
   <script>
-    // Marquee speed: wait for fonts to load before measuring scrollWidth.
-    // Running immediately gives the fallback-font width (too narrow), which
-    // causes the animation to loop before the real font's wider track reaches
-    // -50%, making it snap back halfway across the screen.
+    // Marquee speed: measure after fonts are loaded so we get the real rendered width.
+    // We do a clean cancel-and-restart instead of mutating animationDuration on a running
+    // animation - Safari and Firefox restart the animation on duration changes, causing
+    // the visible "stops and starts over" snap.
     document.fonts.ready.then(function () {
-      var track = document.querySelector('.marquee-track');
-      if (!track) return;
-      // scrollWidth = both halves; divide by 2 for one full loop distance
-      var halfWidth = track.scrollWidth / 2;
-      var PX_PER_SEC = 180; // pixels per second - raise to speed up, lower to slow down
-      var duration = (halfWidth / PX_PER_SEC).toFixed(2);
-      track.style.animationDuration = duration + 's';
+      requestAnimationFrame(function () {
+        var track = document.querySelector('.marquee-track');
+        if (!track) return;
+        // scrollWidth = both halves; padding-right on each span makes -50% land exactly right
+        var halfWidth = track.scrollWidth / 2;
+        var PX_PER_SEC = 180; // pixels per second - raise to speed up, lower to slow down
+        var duration = (halfWidth / PX_PER_SEC).toFixed(2) + 's';
+        // Cancel, force reflow, restart - avoids mid-animation duration mutation
+        track.style.animation = 'none';
+        void track.offsetWidth; // flush pending styles
+        track.style.animation = 'marquee ' + duration + ' linear infinite';
+      });
     });
   </script>
 </body>

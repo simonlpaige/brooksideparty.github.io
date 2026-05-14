@@ -309,7 +309,6 @@ img { max-width: 100%; height: auto; display: block; }
 .marquee-track {
   display: flex;
   width: max-content;
-  gap: 48px;
   white-space: nowrap;
   animation: marquee 38s linear infinite;
   will-change: transform;
@@ -322,6 +321,7 @@ img { max-width: 100%; height: auto; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 14px;
+  padding-right: 48px; /* spacing lives on the item, not the container — makes -50% land exactly at loop point */
 }
 .marquee-dot {
   width: 10px; height: 10px; border-radius: 50%;
