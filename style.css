@@ -650,7 +650,6 @@ img { max-width: 100%; height: auto; display: block; }
 .option-card.tz h3 { font-family: "Creepster", serif; font-size: clamp(32px, 4.5vw, 50px); letter-spacing: 0.04em; color: var(--bone); }
 
 .spook-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 36px; }
-.spook-photos figure:last-child:nth-child(3n+2) { grid-column: span 2; }
 @media (max-width: 720px) { .spook-photos { grid-template-columns: 1fr 1fr; } }
 .spook-photos figure {
   margin: 0;
