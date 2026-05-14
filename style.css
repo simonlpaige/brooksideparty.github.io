@@ -309,6 +309,7 @@ img { max-width: 100%; height: auto; display: block; }
   gap: 48px;
   white-space: nowrap;
   animation: marquee 38s linear infinite;
+  will-change: transform;
   font-family: var(--display);
   font-weight: 700;
   font-size: 22px;
@@ -327,7 +328,7 @@ img { max-width: 100%; height: auto; display: block; }
   to   { transform: translateX(-50%); }
 }
 @media (max-width: 768px) {
-  .marquee-track { animation: 12s linear infinite; }
+  .marquee-track { animation: marquee 20s linear infinite; }
 }
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }

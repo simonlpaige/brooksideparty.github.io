@@ -1,3 +1,10 @@
+## 2026-05-14 — switch contact form from legacy Formspree to our own Cloudflare Worker + Resend
+- **Author**: Simon Paige
+- **Branch**: main
+- **Audit**: PASSED
+- **Screenshots**: C:\Users\simon\code\brooksideparty\screenshots\2026-05-14T12-23-18
+- **Visual verify**: yes
+
 ## 2026-05-14 — speed up mobile marquee from 18s to 12s
 - **Author**: Simon Paige
 - **Branch**: main
