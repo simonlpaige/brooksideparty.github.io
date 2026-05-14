@@ -1,3 +1,10 @@
+## 2026-05-14 — Fix mobile marquee - add will-change: transform for GPU acceleration, fix missing animation name in mobile override (was 12s with no name so animation was dead on mobile)
+- **Author**: Simon Paige
+- **Branch**: main
+- **Audit**: SKIPPED — pre-existing contrast and form label criticals unrelated to marquee fix
+- **Screenshots**: C:\Users\simon\code\brooksideparty\screenshots\2026-05-14T13-56-59
+- **Visual verify**: yes
+
 ## 2026-05-14 — switch contact form from legacy Formspree to our own Cloudflare Worker + Resend
 - **Author**: Simon Paige
 - **Branch**: main
